@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>{{title}}</title>
+</head>
+
+<body>
+  <!--设置行动地址-->
+  <form action="/search" method="post">
+    <!--使搜索框内的内容不改变-->
+    姓名：<input type="text" name="s_name" value="{{s_name}}"><br>
+    年龄：<input type="text" name="s_age" value="{{s_age}}"><br>
+    <input type="submit" value="查询">
+    <a href="/add">新增</a>
+  </form>
+  <table>
+    <tr>
+      <th>编号</th>
+      <th>姓名</th>
+      <th>年龄</th>
+      <th>操作</th>
+    </tr>
+    <!--将每条数据命名为value，并当作索引-->
+    {{each datas as value index}}
+    <tr>
+      <!--将后台返回的数据显示出来-->
+      <td>{{value.id}}</td>
+      <td>{{value.name}}</td>
+      <td>{{value.age}}</td>
+      <td><a href="/del/{{value.id}}">删除</a></td>
+      <td><a href="/toUpdate/{{value.id}}">修改</a></td>
+    </tr>
+    {{/each}}
+  </table>
+</body>
+
+</html>

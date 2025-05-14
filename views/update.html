@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>修改页面</title>
+</head>
+
+<body>
+    <form action="/update" method="post">
+        <!--将后台的数据返回到前端，并将该数据的名字设置为id，返回到后台-->
+        <input type="hidden" value="{{datas[0].id}}" name="id">
+        姓名：<input type="text" name="name" value="{{datas[0].name}}"><br>
+        年龄：<input type="text" name="age" value="{{datas[0].age}}"><br>
+        <input type="submit" value="提交">
+    </form>
+</body>
+
+</html>
